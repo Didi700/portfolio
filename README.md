@@ -1,16 +1,34 @@
-# React + Vite
+# Portfolio de Fadil
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Mon portfolio de développeur web et data, construit avec React.
 
-Currently, two official plugins are available:
+**Voir le site : https://dilfa-dev.vercel.app**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Contenu
 
-## React Compiler
+- Présentation et parcours
+- Projets, avec captures et liens vers le code
+- Domaines de compétences et technologies
+- Contact
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies
 
-## Expanding the Oxlint configuration
+React, Vite, CSS (sans framework), déployé sur Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Choix de conception
+
+- Composants React réutilisables (`Chips`, `Projets`, `Domaines`...)
+- Les projets et domaines sont des données dans des tableaux : pour ajouter un projet, il suffit d'ajouter un objet
+- Responsive : navigation et grilles adaptées au mobile
+- Déploiement automatique à chaque `git push`
+
+## Lancer en local
+
+```bash
+git clone https://github.com/Didi700/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+Puis ouvrir http://localhost:5173
