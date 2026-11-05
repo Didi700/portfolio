@@ -123,7 +123,7 @@ function Contact() {
       <h2>Contact</h2>
       <p>
         Je recherche une alternance en développement web et data. N'hésitez pas
-        à me écrire, je réponds volontiers.
+        à m'écrire, je réponds volontiers.
       </p>
       <div className="boutons">
         <a className="btn principal" href="mailto:fadilassane06@gmail.com">

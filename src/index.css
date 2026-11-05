@@ -101,7 +101,7 @@ body {
   .nav-pill { display: none; }
 }
 /* Bloc orange : domaines */
-.domaines { background: var(--accent); border-radius: 40px 40px 0 0; margin-top: 64px; padding: 80px 0; color: #1a1714; }
+.domaines { background: var(--accent); border-radius: 40px 40px 0 0; margin-top: 0px; padding: 80px 0; color: #1a1714; }
 .domaines .contenu { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
 .domaines h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin: 0; }
 .domaines .italique { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
