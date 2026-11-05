@@ -1,11 +1,14 @@
 function Hero() {
   return (
     <header className="hero">
-      <p className="salut">Bonjour, je suis</p>
-      <h1>Fadil</h1>
+      <p className="salut">Fadil · Développeur web & data</p>
+      <h1>
+        Je construis des <span className="serif">applications</span> de la base
+        de données jusqu'à l'interface.
+      </h1>
       <p className="titre">
-        Développeur web et data, en Master 2 Expert IT Development & Big Data à
-        l'IRIS Paris. Je cherche une alternance.
+        En Master 2 Expert IT Development & Big Data à l'IRIS Paris. Je cherche
+        une alternance.
       </p>
       <div className="boutons">
         <a className="btn principal" href="#projets">Voir mes projets</a>
@@ -75,6 +78,8 @@ function Competences() {
 const PROJETS = [
   {
     titre: "Dashboard transport IDF",
+    categorie: "Data · Dashboard",
+    url: "github.com/Didi700/dashboard-transport-idf",
     description:
       "Dashboard de la fréquentation du réseau ferré francilien, construit à partir de l'open data d'Île-de-France Mobilités (~480 000 lignes). Chaîne complète : nettoyage avec pandas, base SQLite, API REST et interface React.",
     image: "/dashboard.png",
@@ -90,14 +95,21 @@ function Projets() {
       <div className="projets-grid">
         {PROJETS.map((p) => (
           <article className="projet" key={p.titre}>
-            <img src={p.image} alt={`Aperçu du projet ${p.titre}`} />
-            <div className="corps">
-              <h3>{p.titre}</h3>
-              <p>{p.description}</p>
-              <Chips items={p.technos} />
-              <div className="liens">
-                <a href={p.github} target="_blank" rel="noreferrer">Voir le code</a>
+            <div className="fenetre">
+              <div className="barre">
+                <i /><i /><i />
+                <span className="url">{p.url}</span>
               </div>
+              <img src={p.image} alt={`Aperçu du projet ${p.titre}`} />
+            </div>
+            <div>
+              <p className="categorie">{p.categorie}</p>
+              <h3>{p.titre}</h3>
+            </div>
+            <p>{p.description}</p>
+            <Chips items={p.technos} />
+            <div className="liens">
+              <a href={p.github} target="_blank" rel="noreferrer">Voir le code →</a>
             </div>
           </article>
         ))}
@@ -129,12 +141,61 @@ function Footer() {
   return <footer className="footer">© 2026 Fadil · Construit avec React</footer>;
 }
 
+function Nav() {
+  return (
+    <nav className="nav">
+      <a className="logo" href="#">Fadil</a>
+      <ul className="nav-pill">
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+      </ul>
+      <a className="btn principal nav-cta" href="#contact">Me contacter</a>
+    </nav>
+  );
+}
+
+const DOMAINES = [
+  { titre: "Applications web", texte: "Laravel, React, Vue.js" },
+  { titre: "API REST", texte: "Laravel et FastAPI" },
+  { titre: "Bases de données", texte: "MySQL, SQLite, modélisation" },
+  { titre: "Traitement de données", texte: "Nettoyage avec Python et pandas" },
+  { titre: "Tableaux de bord", texte: "React et Recharts" },
+  { titre: "Tests", texte: "PHPUnit et Postman" },
+];
+
+function Domaines() {
+  return (
+    <section className="domaines">
+      <div className="contenu">
+        <h2>
+          Ce que je sais <span className="italique">faire</span>.
+        </h2>
+        <div className="cartes">
+          {DOMAINES.map((d, i) => (
+            <div className="carte" key={d.titre}>
+              <span className="num">0{i + 1}</span>
+              <div>
+                <h3>{d.titre}</h3>
+                <p>{d.texte}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 export default function App() {
   return (
     <>
+      <Nav />
       <div className="container">
         <Hero />
         <Projets />
+      </div>
+      <Domaines />
+      <div className="container">
         <APropos />
         <Competences />
         <Contact />
